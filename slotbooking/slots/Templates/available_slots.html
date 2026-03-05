@@ -1,0 +1,21 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'CSS/css/style.css' %}">
+<h2>Available Slots</h2>
+
+<table border="1">
+<tr>
+<th>ID</th>
+<th>Time</th>
+<th>Action</th>
+</tr>
+
+{% for slot in slots %}
+<tr>
+<td>{{ slot.id }}</td>
+<td>{{ slot.time }}</td>
+<td>
+<a href="/book/{{slot.id}}/">Book</a>
+</td>
+</tr>
+{% endfor %}
+</table>
