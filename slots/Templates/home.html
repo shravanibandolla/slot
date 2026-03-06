@@ -1,7 +1,7 @@
 {% load static %}
-<link rel="stylesheet" href="{% static 'CSS/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'CSS/style.css' %}">
 <h2>Slot Booking System</h2>
 
-<a href="/available/">View Available Slots</a>
+<a href="{% url 'available_slots' %}">View Available Slots</a>
 <br>
-<a href="/booked/">View Booked Slots</a>
+<a href="{% url 'booked_slots' %}">View Booked Slots</a>
