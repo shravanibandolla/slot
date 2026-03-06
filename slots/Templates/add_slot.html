@@ -1,0 +1,17 @@
+<h2>Add Slot</h2>
+
+<form method="post">
+{% csrf_token %}
+
+Time: <input type="text" name="time"><br><br>
+
+Status:
+<select name="status">
+<option value="available">Available</option>
+<option value="booked">Booked</option>
+</select>
+
+<br><br>
+<button type="submit">Add Slot</button>
+
+</form>
