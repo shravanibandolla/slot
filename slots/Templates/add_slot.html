@@ -1,17 +1,27 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="header">
 <h2>Add Slot</h2>
+</div>
+
+<div class="container">
 
 <form method="post">
 {% csrf_token %}
 
-Time: <input type="text" name="time"><br><br>
+Time <br>
+<input type="text" name="time" required><br>
 
-Status:
+Status <br>
 <select name="status">
 <option value="available">Available</option>
 <option value="booked">Booked</option>
 </select>
 
 <br><br>
-<button type="submit">Add Slot</button>
+<button class="btn" type="submit">Add Slot</button>
 
 </form>
+
+</div>

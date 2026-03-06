@@ -1,3 +1,3 @@
 function confirmBooking(){
-    alert("Slot booked successfully");
+    alert("Are you sure you want to book this slot?");
 }

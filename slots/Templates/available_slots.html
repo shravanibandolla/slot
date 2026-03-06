@@ -1,8 +1,13 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
-<h2>Available Slots</h2>
 
-<table border="1">
+<div class="header">
+<h2>Available Slots</h2>
+</div>
+
+<div class="container">
+
+<table>
 <tr>
 <th>ID</th>
 <th>Time</th>
@@ -14,8 +19,12 @@
 <td>{{ slot.id }}</td>
 <td>{{ slot.time }}</td>
 <td>
-<a href="/book/{{slot.id}}/">Book</a>
+<a class="btn" onclick="confirmBooking()" href="/slots/book/{{slot.id}}/">
+Book
+</a>
 </td>
 </tr>
 {% endfor %}
 </table>
+
+</div>

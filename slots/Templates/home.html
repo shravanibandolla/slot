@@ -1,7 +1,51 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
-<h2>Slot Booking System</h2>
+<script src="{% static 'js/script.js' %}"></script>
 
-<a href="{% url 'available_slots' %}">View Available Slots</a>
-<br>
-<a href="{% url 'booked_slots' %}">View Booked Slots</a>
+<div class="header">
+    <h2>Slot Booking Dashboard</h2>
+</div>
+
+<div class="container">
+
+<a class="btn" href="{% url 'add_slot' %}">➕ Add Slot</a>
+<a class="btn" href="{% url 'available_slots' %}">✅ Available Slots</a>
+<a class="btn" href="{% url 'booked_slots' %}">❌ Booked Slots</a>
+
+<h3>📊 All Slots</h3>
+
+<p>Total Available : {{ available_count }}</p>
+<p>Total Booked : {{ booked_count }}</p>
+
+<table>
+<tr>
+<th>ID</th>
+<th>Time</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+{% for slot in slots %}
+<tr>
+<td>{{ slot.id }}</td>
+<td>{{ slot.time }}</td>
+
+<td class="{{ slot.status }}">
+{{ slot.status|title }}
+</td>
+
+<td>
+{% if slot.status == "available" %}
+<a class="btn" onclick="confirmBooking()" href="/slots/book/{{slot.id}}/">
+Book
+</a>
+{% else %}
+Booked
+{% endif %}
+</td>
+
+</tr>
+{% endfor %}
+</table>
+
+</div>

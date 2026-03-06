@@ -1,9 +1,24 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
-<h2>Booked Slots</h2>
 
-<ul>
+<div class="header">
+<h2>Booked Slots</h2>
+</div>
+
+<div class="container">
+
+<table>
+<tr>
+<th>ID</th>
+<th>Time</th>
+</tr>
+
 {% for slot in slots %}
-<li>{{ slot.time }}</li>
+<tr>
+<td>{{ slot.id }}</td>
+<td>{{ slot.time }}</td>
+</tr>
 {% endfor %}
-</ul>
+</table>
+
+</div>
